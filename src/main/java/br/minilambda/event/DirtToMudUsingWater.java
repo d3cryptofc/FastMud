@@ -1,5 +1,6 @@
 package br.minilambda.event;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Directional;
@@ -10,6 +11,8 @@ import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.block.BlockFromToEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
+
+import br.minilambda.utils.GetDirtAroundBlockGenerator;
 
 public class DirtToMudUsingWater implements Listener {
     @EventHandler
@@ -25,21 +28,13 @@ public class DirtToMudUsingWater implements Listener {
         // Get block occupied by water.
         Block blockOccupiedByWater = event.getBlock();
 
-        // Iterating block direction weights.
-        for(Integer[] weight : this.blockDirections){
-            // Getting block.
-            Block block = blockOccupiedByWater.getWorld().getBlockAt(
-                blockOccupiedByWater.getX() + weight[0],
-                blockOccupiedByWater.getY() + weight[1],
-                blockOccupiedByWater.getZ() + weight[2]
-            );
+        // To get dirt blocks around.
+        GetDirtAroundBlockGenerator dirtBlocks = new GetDirtAroundBlockGenerator(blockOccupiedByWater);
+        Block block;
 
-            // Jump to next loop if block is different of dirt.
-            if(block.getType() != Material.DIRT){
-                continue;
-            }
-
-            // Else, set block type to mud block.
+        // Iterating dirt blocks around.
+        while((block = dirtBlocks.next()) != null){
+            // Set block type to mud block.
             block.setType(Material.MUD);
         }
     }
@@ -113,21 +108,13 @@ public class DirtToMudUsingWater implements Listener {
             ((Directional) dispenseBlock.getBlockData()).getFacing()
         );
 
-        // Iterating block direction weights.
-        for(Integer[] weight : this.blockDirections){
-            // Getting block.
-            Block block = facedBlock.getWorld().getBlockAt(
-                facedBlock.getX() + weight[0],
-                facedBlock.getY() + weight[1],
-                facedBlock.getZ() + weight[2]
-            );
+        // To get dirt blocks around.
+        GetDirtAroundBlockGenerator dirtBlocks = new GetDirtAroundBlockGenerator(facedBlock);
+        Block block;
 
-            // Jump to next loop if block is different of dirt.
-            if(block.getType() != Material.DIRT){
-                continue;
-            }
-
-            // Else, set block type to mud block.
+        // Iterating dirt blocks around.
+        while((block = dirtBlocks.next()) != null){
+            // Set block type to mud block.
             block.setType(Material.MUD);
         }
     }
@@ -144,21 +131,13 @@ public class DirtToMudUsingWater implements Listener {
             return;
         }
 
-        // Iterating block direction weights.
-        for(Integer[] weight : this.blockDirections){
-            // Getting block.
-            Block block = fadedBlock.getWorld().getBlockAt(
-                fadedBlock.getX() + weight[0],
-                fadedBlock.getY() + weight[1],
-                fadedBlock.getZ() + weight[2]
-            );
+        // To get dirt blocks around.
+        GetDirtAroundBlockGenerator dirtBlocks = new GetDirtAroundBlockGenerator(fadedBlock);
+        Block block;
 
-            // Jump to next loop if block is different of dirt.
-            if(block.getType() != Material.DIRT){
-                continue;
-            }
-
-            // Else, set block type to mud block.
+        // Iterating dirt blocks around.
+        while((block = dirtBlocks.next()) != null){
+            // Set block type to mud block.
             block.setType(Material.MUD);
         }
     }
