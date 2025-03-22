@@ -12,14 +12,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
 
 public class DirtToMudUsingWater implements Listener {
-    private Integer[][] blockDirections = {
-        {0, -1, 0}, // Bottom.
-        {-1, 0, 0}, // X negative.
-        {+1, 0, 0}, // X positive.
-        {0, 0, -1}, // Z negative.
-        {0, 0, +1}  // Z positive.
-    };
-
     @EventHandler
     public void onPlayerBucketEmptyEvent(PlayerBucketEmptyEvent event){
         /*
