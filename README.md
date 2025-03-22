@@ -6,6 +6,8 @@ _"If glass bottles can turn dirt into mud, then why doesn't a bucket of water wo
 
 And it was thinking a lot about this, spending a lot of time, that I decided to create this plugin for a personal logic correction, and I decided to share it with you 😁
 
+**NOTE:** Lakes generated around the world WILL NOT AFFECT underwater dirts! The reason is the overwhelming loss of performance, although it is a cool idea it does not seem feasible. [See more details here](https://github.com/d3cryptofc/FastMud/issues/1).
+
 ## 🎉 Features ([screenshots here](https://modrinth.com/plugin/fastmud/gallery))
 
 - When player uses water bucket. **[v1.0+]**
