@@ -68,11 +68,7 @@ public class DirtToMudUsingWater implements Listener {
         }
 
         // Getting bottom block.
-        Block bottomBlock = toBlock.getWorld().getBlockAt(
-            toBlock.getX(),
-            toBlock.getY() - 1,
-            toBlock.getZ()
-        );
+        Block bottomBlock = toBlock.getRelative(0, -1, 0);
 
         // Exit if bottom block is different of dirt.
         if(bottomBlock.getType() != Material.DIRT){
@@ -97,11 +93,7 @@ public class DirtToMudUsingWater implements Listener {
         }
 
         // Getting top block.
-        Block topBlock = block.getWorld().getBlockAt(
-            block.getX(),
-            block.getY() + 1,
-            block.getZ()
-        );
+        Block topBlock = block.getRelative(0, 1, 0);
 
         // Exit if top block is water.
         if(topBlock.getType() != Material.WATER){
