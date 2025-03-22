@@ -6,6 +6,7 @@ import org.bukkit.block.data.Directional;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
+import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.block.BlockFromToEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
@@ -135,6 +136,37 @@ public class DirtToMudUsingWater implements Listener {
                 facedBlock.getX() + weight[0],
                 facedBlock.getY() + weight[1],
                 facedBlock.getZ() + weight[2]
+            );
+
+            // Jump to next loop if block is different of dirt.
+            if(block.getType() != Material.DIRT){
+                continue;
+            }
+
+            // Else, set block type to mud block.
+            block.setType(Material.MUD);
+        }
+    }
+
+    @EventHandler
+    public void onBlockFadeToWater(BlockFadeEvent event){
+        /*
+         * When block fade to water (ex: ice block).
+         */
+        // Getting fadded block.
+        Block fadedBlock = event.getBlock();
+        // Exit if new block state is different of water.
+        if(event.getNewState().getType() != Material.WATER){
+            return;
+        }
+
+        // Iterating block direction weights.
+        for(Integer[] weight : this.blockDirections){
+            // Getting block.
+            Block block = fadedBlock.getWorld().getBlockAt(
+                fadedBlock.getX() + weight[0],
+                fadedBlock.getY() + weight[1],
+                fadedBlock.getZ() + weight[2]
             );
 
             // Jump to next loop if block is different of dirt.
