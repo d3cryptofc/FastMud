@@ -6,10 +6,13 @@ _"If glass bottles can turn dirt into mud, then why doesn't a bucket of water wo
 
 And it was thinking a lot about this, spending a lot of time, that I decided to create this plugin for a personal logic correction, and I decided to share it with you 😁
 
-## 🎉 Features
+## 🎉 Features ([screenshots here](https://modrinth.com/plugin/fastmud/gallery))
 
-- When player uses water bucket.
-- When water flows.
+- When player uses water bucket. **[v1.0+]**
+- When water flows. **[v1.0+]**
+- When block is placed under water. **[v1.1+]**
+- When dispenser dispenses water. **[v1.2+]**
+- When block fade to water (ex: ice block). **[v1.3+]**
 
 ## ⚡️ Compatibility
 
