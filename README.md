@@ -1,3 +1,7 @@
+> [!CAUTION]
+> **Be very careful with clone projects, some may contain MALWARE!** ⚠️\
+> You should be suspicious if you find _DLL_, _EXE_, or _BAT_ files.
+
 # FastMud
 
 **Maybe you've already thought the following:**
