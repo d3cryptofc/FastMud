@@ -6,11 +6,11 @@
 
 **Maybe you've already thought the following:**
 
-_"If glass bottles can turn dirt into mud, then why doesn't a bucket of water work? Wouldn't it make more sense if running water could make mud? 🤔"_
+> "If glass bottles can turn dirt into mud, then why doesn't a bucket of water work? Wouldn't it make more sense if running water could make mud? 🤔"
 
-And it was thinking a lot about this, spending a lot of time, that I decided to create this plugin for a personal logic correction, and I decided to share it with you 😁
+It was after thinking a lot about this logical inconsistency, as well as spending a lot of time with glass bottles, that I decided to create this plugin and share it with you! 😁
 
-**NOTE:** Lakes generated around the world WILL NOT AFFECT underwater dirts! The reason is the overwhelming loss of performance, although it is a cool idea it does not seem feasible. [See more details here](https://github.com/d3cryptofc/FastMud/issues/1).
+However, lakes generated around the world WILL NOT AFFECT underwater dirts! The reason is the overwhelming loss of performance, although it is a cool idea it does not seem feasible. [See more details here](https://github.com/d3cryptofc/FastMud/issues/1).
 
 ## 🎉 Features ([screenshots here](https://modrinth.com/plugin/fastmud/gallery))
 
