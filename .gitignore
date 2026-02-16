@@ -1,5 +1,7 @@
 .*
 .vscode
 target
+build
+bin
 *.class
 *.old
