@@ -20,13 +20,17 @@ It was after thinking a lot about this logical inconsistency, as well as spendin
 
 However, lakes generated around the world WILL NOT AFFECT underwater dirts! The reason is the overwhelming loss of performance, although it is a cool idea it does not seem feasible. [See more details here](https://github.com/d3cryptofc/FastMud/issues/1).
 
+## Disclaimer
+
+We do not intend to release corrections for previous versions of the plugin. So, please always stay updated with the latest release.
+
 ## 🎉 Features ([screenshots here](https://modrinth.com/plugin/fastmud/gallery))
 
-- When player uses water bucket. **[v1.0+]**
-- When water flows. **[v1.0+]**
-- When block is placed under water. **[v1.1+]**
-- When dispenser dispenses water. **[v1.2+]**
-- When block fade to water (ex: ice block). **[v1.3+]**
+- When player uses water bucket.
+- When water flows.
+- When block is placed under water.
+- When dispenser dispenses water.
+- When block fade to water (ex: ice block).
 
 ## ⚡️ Compatibility
 
