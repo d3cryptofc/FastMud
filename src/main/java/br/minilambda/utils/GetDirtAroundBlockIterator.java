@@ -5,7 +5,7 @@ import java.util.Iterator;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
-public class GetDirtAroundBlockGenerator implements Iterator<Block> {
+public class GetDirtAroundBlockIterator implements Iterator<Block> {
 
     // Space for origin bloock.
     private Block fromBlock;
@@ -15,7 +15,7 @@ public class GetDirtAroundBlockGenerator implements Iterator<Block> {
     // Space for the current block offset position - follow `aheadBlockOffsetPosition`.
     private int currentBlockOffsetPosition = 0;
 
-    public GetDirtAroundBlockGenerator(Block fromBlock) {
+    public GetDirtAroundBlockIterator(Block fromBlock) {
         // Receives the origin block.
         this.fromBlock = fromBlock;
     }

@@ -12,6 +12,6 @@ public class GetDirtAroundBlockIterable implements Iterable<Block> {
     }
 
     public Iterator<Block> iterator() {
-        return new GetDirtAroundBlockGenerator(this.fromBlock);
+        return new GetDirtAroundBlockIterator(this.fromBlock);
     }
 }
