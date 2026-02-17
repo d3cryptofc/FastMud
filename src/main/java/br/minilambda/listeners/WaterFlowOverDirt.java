@@ -1,6 +1,7 @@
 package br.minilambda.listeners;
 
-import br.minilambda.utils.GetDirtAroundBlockIterable;
+import br.minilambda.constant.AroundBlockOffsets;
+import br.minilambda.utils.GetBlockAroundBlockIterable;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -25,7 +26,11 @@ public class WaterFlowOverDirt implements Listener {
         }
 
         // Iterating dirts around the block.
-        for (Block block : new GetDirtAroundBlockIterable(toBlock)) {
+        for (Block block : new GetBlockAroundBlockIterable(
+            toBlock,
+            AroundBlockOffsets.XZB,
+            Material.DIRT
+        )) {
             // Set block type to mud block.
             block.setType(Material.MUD);
         }
