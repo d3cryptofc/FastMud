@@ -1,6 +1,6 @@
 package br.minilambda.listeners;
 
-import br.minilambda.utils.GetDirtAroundBlockGenerator;
+import br.minilambda.utils.GetDirtAroundBlockIterable;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -21,13 +21,8 @@ public class IceBlockFadeToWaterOverDirt implements Listener {
             return;
         }
 
-        // To get dirt blocks around.
-        GetDirtAroundBlockGenerator dirtBlocks =
-            new GetDirtAroundBlockGenerator(fadedBlock);
-        Block block;
-
-        // Iterating dirt blocks around.
-        while ((block = dirtBlocks.next()) != null) {
+        // Iterating dirts around the block.
+        for (Block block : new GetDirtAroundBlockIterable(fadedBlock)) {
             // Set block type to mud block.
             block.setType(Material.MUD);
         }
