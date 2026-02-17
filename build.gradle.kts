@@ -35,7 +35,8 @@ tasks {
             "projectName" to project.name,
             "projectGroup" to project.group,
             "projectAuthor" to project.property("projectAuthor").toString(),
-            "gameVersion" to project.property("gameVersion").toString()
+            "gameVersion" to project.property("gameVersion").toString(),
+            "projectRepositoryUrl" to project.property("projectRepositoryUrl").toString()
         )
     }
 }
