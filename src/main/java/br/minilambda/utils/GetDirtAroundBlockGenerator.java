@@ -7,52 +7,82 @@ import org.bukkit.block.Block;
 
 public class GetDirtAroundBlockGenerator implements Iterator<Block> {
 
+    // Space for origin bloock.
     private Block fromBlock;
-    private int blockOffsetPosition = 0;
-    private boolean stopNext = false;
+
+    // Space for the ahead block offset position - computed in hasNext().
+    private int aheadBlockOffsetPosition = 0;
+    // Space for the current block offset position - follow `aheadBlockOffsetPosition`.
+    private int currentBlockOffsetPosition = 0;
 
     public GetDirtAroundBlockGenerator(Block fromBlock) {
+        // Receives the origin block.
         this.fromBlock = fromBlock;
     }
 
     @Override
     public boolean hasNext() {
-        // Has next while block offsets position is less than block offsets length.
-        return (
-            this.blockOffsetPosition < Constants.AROUND_BLOCK_OFFSETS.length &&
-            !this.stopNext
-        );
+        // Space for block that will be obtained in the iteration.
+        Block block;
+        // Space for array of integer offsets (X, Y, Z).
+        int[] offsets;
+
+        // Iterating around block offsets.
+        for (
+            // Starts iteration from current block offset position.
+            int tempBlockOffsetPosition = this.currentBlockOffsetPosition;
+            // Iterates while less than offets length.
+            tempBlockOffsetPosition < Constants.AROUND_BLOCK_OFFSETS.length;
+            // Increments temporary block offset position.
+            tempBlockOffsetPosition++
+        ) {
+            // Get offsets from current offset position.
+            offsets = Constants.AROUND_BLOCK_OFFSETS[tempBlockOffsetPosition];
+
+            // Getting relative block using offsets.
+            block = this.fromBlock.getRelative(
+                offsets[0],
+                offsets[1],
+                offsets[2]
+            );
+
+            // Jump to next iteration if block is different of dirt.
+            if (block.getType() != Material.DIRT) continue;
+
+            // Is a dirt, then save the temporary block offset ahead.
+            this.aheadBlockOffsetPosition = tempBlockOffsetPosition;
+
+            // Has dirt, returns true.
+            return true;
+        }
+
+        // No dirts found, returns false.
+        return false;
     }
 
     @Override
     public Block next() {
-        int[] offsets;
-        int offsetX, offsetY, offsetZ;
-        Block block;
+        // Computed block offset position is ahead of current offset position or equal?
+        if (this.aheadBlockOffsetPosition >= this.currentBlockOffsetPosition) {
+            // Ensure offset position equality.
+            this.currentBlockOffsetPosition = this.aheadBlockOffsetPosition;
 
-        while (this.hasNext()) {
-            // Get around block offesets by current position.
-            offsets = Constants.AROUND_BLOCK_OFFSETS[this.blockOffsetPosition];
-            // Unpacking offsets.
-            offsetX = offsets[0];
-            offsetY = offsets[1];
-            offsetZ = offsets[2];
+            // Get around block offesets by current position offset.
+            int[] offsets = Constants
+                .AROUND_BLOCK_OFFSETS[this.currentBlockOffsetPosition];
 
-            // Increase current offset position.
-            this.blockOffsetPosition++;
+            // Increment +1 to start computing from next offset position.
+            this.currentBlockOffsetPosition++;
 
-            // Getting relative block.
-            block = this.fromBlock.getRelative(offsetX, offsetY, offsetZ);
-            // Jump to next loop if block is different of dirt.
-            if (block.getType() != Material.DIRT) {
-                continue;
-            }
-            // Returns dirt block.
-            return block;
+            // Returns the relative block.
+            return this.fromBlock.getRelative(
+                offsets[0],
+                offsets[1],
+                offsets[2]
+            );
         }
 
-        // Stop next.
-        this.stopNext = true;
+        // No dirts available, returns null.
         return null;
     }
 }
