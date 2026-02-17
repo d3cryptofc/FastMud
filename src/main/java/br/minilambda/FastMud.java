@@ -2,7 +2,7 @@ package br.minilambda;
 
 import br.minilambda.listeners.DispenseWaterOverDirt;
 import br.minilambda.listeners.IceBlockFadeToWaterOverDirt;
-import br.minilambda.listeners.PlaceDirtUnderWater;
+import br.minilambda.listeners.PlaceDirtOverWater;
 import br.minilambda.listeners.WaterBucketOverDirt;
 import br.minilambda.listeners.WaterFlowOverDirt;
 import br.minilambda.utils.AnsiColor;
@@ -36,7 +36,7 @@ public class FastMud extends JavaPlugin {
         Listener[] listeners = {
             new WaterBucketOverDirt(),
             new WaterFlowOverDirt(),
-            new PlaceDirtUnderWater(),
+            new PlaceDirtOverWater(),
             new IceBlockFadeToWaterOverDirt(),
             new DispenseWaterOverDirt(),
         };
