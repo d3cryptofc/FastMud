@@ -34,4 +34,4 @@ We do not intend to release corrections for previous versions of the plugin. So,
 
 ## ⚡️ Compatibility
 
-Mud was officially introduced in Minecraft version 1.19, and it is my hope that this plugin will be compatible with 1.19+. Testing has only been done with 1.21.4, so please create an issue on github if it breaks in lower versions. Thank you!
+Mud was officially introduced in Minecraft version 1.19, and we expect this plugin to be compatible with version 1.19+.
