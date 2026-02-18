@@ -1,4 +1,4 @@
-package br.minilambda.listeners;
+package br.minilambda.listener;
 
 import br.minilambda.constant.AroundBlockOffsets;
 import br.minilambda.utils.GetBlockAroundBlockIterable;
@@ -6,26 +6,25 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBucketEmptyEvent;
+import org.bukkit.event.block.BlockFadeEvent;
 
-public class WaterBucketOverDirt implements Listener {
+public class IceBlockFadeToWaterOverDirt implements Listener {
 
     @EventHandler
-    public void onPlayerBucketEmptyEvent(PlayerBucketEmptyEvent event) {
+    public void onBlockFadeEvent(BlockFadeEvent event) {
         /*
-         * When player uses water bucket.
+         * When block fade to water (ex: ice block).
          */
-        // Exit if not using water bucket.
-        if (event.getBucket() != Material.WATER_BUCKET) {
+        // Getting fadded block.
+        Block fadedBlock = event.getBlock();
+        // Exit if new block state is different of water.
+        if (event.getNewState().getType() != Material.WATER) {
             return;
         }
 
-        // Get block occupied by water.
-        Block blockOccupiedByWater = event.getBlock();
-
         // Iterating dirts around the block.
         for (Block block : new GetBlockAroundBlockIterable(
-            blockOccupiedByWater,
+            fadedBlock,
             AroundBlockOffsets.XZB,
             Material.DIRT
         )) {

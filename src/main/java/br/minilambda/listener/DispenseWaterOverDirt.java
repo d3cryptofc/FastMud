@@ -1,4 +1,4 @@
-package br.minilambda.listeners;
+package br.minilambda.listener;
 
 import br.minilambda.constant.AroundBlockOffsets;
 import br.minilambda.utils.GetBlockAroundBlockIterable;

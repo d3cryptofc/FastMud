@@ -1,10 +1,10 @@
 package br.minilambda.manager;
 
-import br.minilambda.listeners.DispenseWaterOverDirt;
-import br.minilambda.listeners.IceBlockFadeToWaterOverDirt;
-import br.minilambda.listeners.PlaceDirtOverWater;
-import br.minilambda.listeners.WaterBucketOverDirt;
-import br.minilambda.listeners.WaterFlowOverDirt;
+import br.minilambda.listener.DispenseWaterOverDirt;
+import br.minilambda.listener.IceBlockFadeToWaterOverDirt;
+import br.minilambda.listener.PlaceDirtOverWater;
+import br.minilambda.listener.WaterBucketOverDirt;
+import br.minilambda.listener.WaterFlowOverDirt;
 import br.minilambda.utils.HumanUtils;
 import java.util.logging.Logger;
 import org.bukkit.configuration.ConfigurationSection;
