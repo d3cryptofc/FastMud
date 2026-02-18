@@ -1,4 +1,4 @@
-package br.minilambda.iterable;
+package com.github.d3cryptofc.fastmud.iterable;
 
 import java.util.Iterator;
 import org.bukkit.Material;

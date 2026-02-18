@@ -1,7 +1,7 @@
-package br.minilambda.listener;
+package com.github.d3cryptofc.fastmud.listener;
 
-import br.minilambda.constant.AroundBlockOffsets;
-import br.minilambda.iterable.GetBlockAroundBlockIterable;
+import com.github.d3cryptofc.fastmud.constant.AroundBlockOffsets;
+import com.github.d3cryptofc.fastmud.iterable.GetBlockAroundBlockIterable;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;

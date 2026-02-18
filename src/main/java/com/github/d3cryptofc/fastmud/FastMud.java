@@ -1,7 +1,7 @@
-package br.minilambda;
+package com.github.d3cryptofc.fastmud;
 
-import br.minilambda.manager.PluginFeatureManager;
-import br.minilambda.utils.AnsiColor;
+import com.github.d3cryptofc.fastmud.manager.PluginFeatureManager;
+import com.github.d3cryptofc.fastmud.utils.AnsiColor;
 import java.util.logging.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 

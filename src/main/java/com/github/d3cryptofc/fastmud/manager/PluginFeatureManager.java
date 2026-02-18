@@ -1,11 +1,11 @@
-package br.minilambda.manager;
+package com.github.d3cryptofc.fastmud.manager;
 
-import br.minilambda.listener.DispenseWaterOverDirt;
-import br.minilambda.listener.IceBlockFadeToWaterOverDirt;
-import br.minilambda.listener.PlaceDirtOverWater;
-import br.minilambda.listener.WaterBucketOverDirt;
-import br.minilambda.listener.WaterFlowOverDirt;
-import br.minilambda.utils.HumanUtils;
+import com.github.d3cryptofc.fastmud.listener.DispenseWaterOverDirt;
+import com.github.d3cryptofc.fastmud.listener.IceBlockFadeToWaterOverDirt;
+import com.github.d3cryptofc.fastmud.listener.PlaceDirtOverWater;
+import com.github.d3cryptofc.fastmud.listener.WaterBucketOverDirt;
+import com.github.d3cryptofc.fastmud.listener.WaterFlowOverDirt;
+import com.github.d3cryptofc.fastmud.utils.HumanUtils;
 import java.util.logging.Logger;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;

@@ -1,4 +1,4 @@
-package br.minilambda.constant;
+package com.github.d3cryptofc.fastmud.constant;
 
 public class AroundBlockOffsets {
 

@@ -1,4 +1,4 @@
-package br.minilambda.utils;
+package com.github.d3cryptofc.fastmud.utils;
 
 public class AnsiColor {
 
