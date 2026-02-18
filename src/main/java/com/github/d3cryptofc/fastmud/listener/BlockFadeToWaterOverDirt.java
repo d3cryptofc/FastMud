@@ -8,7 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFadeEvent;
 
-public class IceBlockFadeToWaterOverDirt implements Listener {
+public class BlockFadeToWaterOverDirt implements Listener {
 
     @EventHandler
     public void onBlockFadeEvent(BlockFadeEvent event) {

@@ -1,7 +1,7 @@
 package com.github.d3cryptofc.fastmud.manager;
 
+import com.github.d3cryptofc.fastmud.listener.BlockFadeToWaterOverDirt;
 import com.github.d3cryptofc.fastmud.listener.DispenseWaterOverDirt;
-import com.github.d3cryptofc.fastmud.listener.IceBlockFadeToWaterOverDirt;
 import com.github.d3cryptofc.fastmud.listener.PlaceDirtOverWater;
 import com.github.d3cryptofc.fastmud.listener.WaterBucketOverDirt;
 import com.github.d3cryptofc.fastmud.listener.WaterFlowOverDirt;
@@ -90,7 +90,7 @@ public class PluginFeatureManager {
         this.load(
             "Block Fade To Water Over Dirt",
             "block_fade_to_water_over_dirt",
-            new IceBlockFadeToWaterOverDirt()
+            new BlockFadeToWaterOverDirt()
         );
     }
 
