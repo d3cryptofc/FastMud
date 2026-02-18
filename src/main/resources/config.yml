@@ -1,0 +1,38 @@
+# |-------------------------------------------------------------------------
+# |   ___  ___  ___ ____
+# |  /__  /__/ /__   /  MUD
+# | /    /  / ___/  /  ${projectVersion}
+# |
+# |--------------------------------------------------------------------------
+# | BUG REPORTS, SUGGESSTIONS OR HELP:
+# | ${projectRepositoryUrl}/issues
+# |
+# | REPOSITORY:
+# | ${projectRepositoryUrl}
+# |--------------------------------------------------------------------------
+# | New options are not added to this file automatically.
+# | Default values are used if an option cannot be found.
+# | The latest config versions can be obtained at the repository link above.
+# |--------------------------------------------------------------------------
+
+# Feature settings.
+when:
+  # When player use water buycket over dirt.
+  water_bucket_over_dirt:
+    enabled: true
+
+  # When running water over dirt.
+  water_flow_over_dirt:
+    enabled: true
+
+  # When place dirts over water.
+  place_dirt_over_water:
+    enabled: true
+
+  # When block fade to water over dirt (like ice).
+  block_fade_to_water_over_dirt:
+    enabled: true
+
+  # When disspenser dispenses water over dirt.
+  dispense_water_over_dirt:
+    enabled: true

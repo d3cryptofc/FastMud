@@ -1,17 +1,13 @@
 package br.minilambda;
 
-import br.minilambda.listeners.DispenseWaterOverDirt;
-import br.minilambda.listeners.IceBlockFadeToWaterOverDirt;
-import br.minilambda.listeners.PlaceDirtOverWater;
-import br.minilambda.listeners.WaterBucketOverDirt;
-import br.minilambda.listeners.WaterFlowOverDirt;
+import br.minilambda.manager.PluginFeatureManager;
 import br.minilambda.utils.AnsiColor;
 import java.util.logging.Logger;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class FastMud extends JavaPlugin {
+
+    private Logger logger;
 
     public void showBanner() {
         String[] lines = {
@@ -21,32 +17,24 @@ public class FastMud extends JavaPlugin {
             "",
         };
 
-        Logger logger = this.getLogger();
         String starting_color;
 
         for (int idx = 0; idx < lines.length; idx++) {
             starting_color = idx != 0 ? AnsiColor.DARK_GRAY : AnsiColor.BLUE;
 
-            logger.info(starting_color + lines[idx]);
+            this.logger.info(starting_color + lines[idx]);
         }
     }
 
     @Override
     public void onEnable() {
-        Listener[] listeners = {
-            new WaterBucketOverDirt(),
-            new WaterFlowOverDirt(),
-            new PlaceDirtOverWater(),
-            new IceBlockFadeToWaterOverDirt(),
-            new DispenseWaterOverDirt(),
-        };
+        this.logger = this.getLogger();
+        this.saveDefaultConfig();
 
-        PluginManager pm = this.getServer().getPluginManager();
+        // Showing plugin banner.
+        this.showBanner();
 
-        for (Listener listener : listeners) {
-            pm.registerEvents(listener, this);
-        }
-
-        showBanner();
+        // Enabling features.
+        (new PluginFeatureManager(this)).loadAll();
     }
 }
