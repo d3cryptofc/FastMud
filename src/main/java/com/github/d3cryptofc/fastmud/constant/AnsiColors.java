@@ -1,6 +1,6 @@
-package com.github.d3cryptofc.fastmud.utils;
+package com.github.d3cryptofc.fastmud.constant;
 
-public class AnsiColor {
+public class AnsiColors {
 
     public static final String RESET = "\033[m";
     public static final String DARK_RED = "\033[0;31m";
