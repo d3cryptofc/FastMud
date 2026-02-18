@@ -19,9 +19,7 @@ public class PlaceDirtOverWater implements Listener {
         Block placedBlock = event.getBlock();
 
         // Exit if block is different of dirt.
-        if (placedBlock.getType() != Material.DIRT) {
-            return;
-        }
+        if (placedBlock.getType() != Material.DIRT) return;
 
         // Check contains any WATER around the placed block.
         if (
@@ -30,9 +28,6 @@ public class PlaceDirtOverWater implements Listener {
                 AroundBlockOffsets.XZT,
                 Material.WATER
             ).hasNext()
-        ) {
-            // Set placed block to mud block.
-            placedBlock.setType(Material.MUD);
-        }
+        ) placedBlock.setType(Material.MUD); // Set placed block to mud block.
     }
 }

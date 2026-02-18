@@ -16,9 +16,7 @@ public class WaterBucketOverDirt implements Listener {
          * When player uses water bucket.
          */
         // Exit if not using water bucket.
-        if (event.getBucket() != Material.WATER_BUCKET) {
-            return;
-        }
+        if (event.getBucket() != Material.WATER_BUCKET) return;
 
         // Get block occupied by water.
         Block blockOccupiedByWater = event.getBlock();
@@ -28,9 +26,7 @@ public class WaterBucketOverDirt implements Listener {
             blockOccupiedByWater,
             AroundBlockOffsets.XZB,
             Material.DIRT
-        )) {
-            // Set block type to mud block.
-            block.setType(Material.MUD);
-        }
+        ))
+            block.setType(Material.MUD); // Set block type to mud block.
     }
 }

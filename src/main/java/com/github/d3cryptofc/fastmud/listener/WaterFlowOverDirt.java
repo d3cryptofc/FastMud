@@ -21,18 +21,14 @@ public class WaterFlowOverDirt implements Listener {
         Block toBlock = event.getToBlock();
 
         // Exit if block type is different of water.
-        if (fromBlock.getType() != Material.WATER) {
-            return;
-        }
+        if (fromBlock.getType() != Material.WATER) return;
 
         // Iterating dirts around the block.
         for (Block block : new GetBlockAroundBlockIterable(
             toBlock,
             AroundBlockOffsets.XZB,
             Material.DIRT
-        )) {
-            // Set block type to mud block.
-            block.setType(Material.MUD);
-        }
+        ))
+            block.setType(Material.MUD); // Set block type to mud block.
     }
 }

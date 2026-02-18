@@ -34,11 +34,8 @@ public class GetBlockAroundBlockIterator implements Iterator<Block> {
     private boolean containsExpectedMaterial(Material material) {
         // Iterating every expected materials.
         for (Material expectedMaterial : this.expectedMaterials) {
-            // If material is the expected.
-            if (material == expectedMaterial) {
-                // Has expected material, returns true.
-                return true;
-            }
+            // If material is the expected, returns true.
+            if (material == expectedMaterial) return true;
         }
         // No material matched.
         return false;
@@ -75,10 +72,7 @@ public class GetBlockAroundBlockIterator implements Iterator<Block> {
                 this.expectedMaterials.length > 0 &&
                 // But no contains expected material.
                 !this.containsExpectedMaterial(blockMaterial)
-            ) {
-                // Jump to next block.
-                continue;
-            }
+            ) continue; // Jump to next block.
 
             // Expected material, then save the temporary block offset ahead.
             this.aheadBlockOffsetPosition = tempBlockOffsetPosition;

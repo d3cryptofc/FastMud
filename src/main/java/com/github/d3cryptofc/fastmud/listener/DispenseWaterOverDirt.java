@@ -17,9 +17,7 @@ public class DispenseWaterOverDirt implements Listener {
          * When dispenser dispenses water.
          */
         // Exit if item dispensed is different of water bucket.
-        if (event.getItem().getType() != Material.WATER_BUCKET) {
-            return;
-        }
+        if (event.getItem().getType() != Material.WATER_BUCKET) return;
 
         // Get dispense block.
         Block dispenseBlock = event.getBlock();
@@ -33,9 +31,7 @@ public class DispenseWaterOverDirt implements Listener {
             facedBlock,
             AroundBlockOffsets.XZB,
             Material.DIRT
-        )) {
-            // Set block type to mud block.
-            block.setType(Material.MUD);
-        }
+        ))
+            block.setType(Material.MUD); // Set block type to mud block.
     }
 }

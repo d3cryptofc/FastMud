@@ -45,11 +45,8 @@ public class PluginFeatureManager {
         // Get feature enabled in configuration.
         boolean enabled = section.getBoolean("enabled", false);
 
-        // Enabled feature?
-        if (enabled) {
-            // Register event listener.
-            this.pluginManager.registerEvents(listener, this.plugin);
-        }
+        // Enabled feature? Register event listener.
+        if (enabled) this.pluginManager.registerEvents(listener, this.plugin);
 
         // Log feature configuration.
         this.logger.info(
@@ -115,12 +112,7 @@ public class PluginFeatureManager {
             this::loadDispenseWaterOverDirt,
         };
 
-        for (Runnable runnable : runnables) {
-            runnable.run();
-        }
-
-        if (runnables.length > 0) {
-            this.logger.info("");
-        }
+        for (Runnable runnable : runnables) runnable.run();
+        if (runnables.length > 0) this.logger.info("");
     }
 }
