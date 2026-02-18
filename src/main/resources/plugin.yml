@@ -1,5 +1,6 @@
 name: "${projectName}"
 description: Lightweight and efficient plugin to turn dirt into mud without using glass bottle. Save your time!
+website: "${projectRepositoryUrl}"
 main: "${projectGroup}.${projectName}"
 version: "${projectVersion}"
 author: "${projectAuthor}"
