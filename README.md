@@ -32,6 +32,32 @@ We do not intend to release corrections for previous versions of the plugin. So,
 - When dispenser dispenses water.
 - When block fade to water (ex: ice block).
 
+## ⚙️ Configuration ([`config.yml`](/src/main/resources/config.yml))
+
+```yaml
+# Feature settings.
+when:
+  # When player use water buycket over dirt.
+  water_bucket_over_dirt:
+    enabled: true
+
+  # When running water over dirt.
+  water_flow_over_dirt:
+    enabled: true
+
+  # When place dirts over water.
+  place_dirt_over_water:
+    enabled: true
+
+  # When block fade to water over dirt (like ice).
+  block_fade_to_water_over_dirt:
+    enabled: true
+
+  # When disspenser dispenses water over dirt.
+  dispense_water_over_dirt:
+    enabled: true
+```
+
 ## ⚡️ Compatibility
 
 Mud was officially introduced in Minecraft version 1.19, and we expect this plugin to be compatible with version 1.19+.
