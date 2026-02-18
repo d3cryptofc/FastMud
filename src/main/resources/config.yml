@@ -4,7 +4,7 @@
 # | /    /  / ___/  /  ${projectVersion}
 # |
 # |--------------------------------------------------------------------------
-# | BUG REPORTS, SUGGESSTIONS OR HELP:
+# | BUG REPORTS, SUGGESTIONS OR HELP:
 # | ${projectRepositoryUrl}/issues
 # |
 # | REPOSITORY:
@@ -17,7 +17,7 @@
 
 # Feature settings.
 when:
-  # When player use water buycket over dirt.
+  # When player use water bucket over dirt.
   water_bucket_over_dirt:
     enabled: true
 
