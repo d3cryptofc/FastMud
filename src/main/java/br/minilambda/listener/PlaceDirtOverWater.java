@@ -1,7 +1,7 @@
 package br.minilambda.listener;
 
 import br.minilambda.constant.AroundBlockOffsets;
-import br.minilambda.utils.GetBlockAroundBlockIterator;
+import br.minilambda.iterable.GetBlockAroundBlockIterator;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;

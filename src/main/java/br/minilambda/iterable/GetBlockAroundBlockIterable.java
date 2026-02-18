@@ -1,4 +1,4 @@
-package br.minilambda.utils;
+package br.minilambda.iterable;
 
 import java.util.Iterator;
 import org.bukkit.Material;

@@ -1,7 +1,7 @@
 package br.minilambda.listener;
 
 import br.minilambda.constant.AroundBlockOffsets;
-import br.minilambda.utils.GetBlockAroundBlockIterable;
+import br.minilambda.iterable.GetBlockAroundBlockIterable;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Directional;
