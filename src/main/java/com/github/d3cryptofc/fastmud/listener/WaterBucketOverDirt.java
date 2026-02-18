@@ -13,7 +13,7 @@ public class WaterBucketOverDirt implements Listener {
     @EventHandler
     public void onPlayerBucketEmptyEvent(PlayerBucketEmptyEvent event) {
         /*
-         * When player uses water bucket.
+         * When player uses water bucket over dirt.
          */
         // Exit if not using water bucket.
         if (event.getBucket() != Material.WATER_BUCKET) return;

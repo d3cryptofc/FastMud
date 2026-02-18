@@ -13,7 +13,7 @@ public class PlaceDirtOverWater implements Listener {
     @EventHandler
     public void onBlockPlaceEvent(BlockPlaceEvent event) {
         /*
-         * When dirt is placed under water.
+         * When dirt is placed over water.
          */
         // Getting block placed.
         Block placedBlock = event.getBlock();

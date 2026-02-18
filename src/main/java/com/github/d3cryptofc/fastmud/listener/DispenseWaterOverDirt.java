@@ -14,7 +14,7 @@ public class DispenseWaterOverDirt implements Listener {
     @EventHandler
     public void onBlockDispenseEvent(BlockDispenseEvent event) {
         /*
-         * When dispenser dispenses water.
+         * When dispenser dispenses water over dirt.
          */
         // Exit if item dispensed is different of water bucket.
         if (event.getItem().getType() != Material.WATER_BUCKET) return;

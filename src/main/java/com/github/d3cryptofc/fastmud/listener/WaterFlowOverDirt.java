@@ -13,7 +13,7 @@ public class WaterFlowOverDirt implements Listener {
     @EventHandler
     public void onBlockFromToEvent(BlockFromToEvent event) {
         /*
-         * When water flows.
+         * When water flows over dirt.
          */
         // From block.
         Block fromBlock = event.getBlock();

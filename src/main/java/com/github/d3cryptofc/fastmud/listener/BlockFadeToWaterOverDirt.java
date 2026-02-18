@@ -13,7 +13,7 @@ public class BlockFadeToWaterOverDirt implements Listener {
     @EventHandler
     public void onBlockFadeEvent(BlockFadeEvent event) {
         /*
-         * When block fade to water (ex: ice block).
+         * When block fade to water over dirt (ex: ice block).
          */
         // Getting fadded block.
         Block fadedBlock = event.getBlock();
