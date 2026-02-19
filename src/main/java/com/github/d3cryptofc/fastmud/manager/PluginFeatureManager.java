@@ -1,5 +1,6 @@
 package com.github.d3cryptofc.fastmud.manager;
 
+import com.github.d3cryptofc.fastmud.FastMud;
 import com.github.d3cryptofc.fastmud.listener.BlockFadeToWaterOverDirt;
 import com.github.d3cryptofc.fastmud.listener.DispenseWaterOverDirt;
 import com.github.d3cryptofc.fastmud.listener.PlaceDirtOverWater;
@@ -11,18 +12,17 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class PluginFeatureManager {
 
-    private JavaPlugin plugin;
+    private FastMud plugin;
     private PluginManager pluginManager;
     private ConfigurationSection whenConfigSection;
     private Logger logger;
 
-    public PluginFeatureManager(JavaPlugin plugin) {
-        // Get plugin.
-        this.plugin = plugin;
+    public PluginFeatureManager() {
+        // Get the plugin.
+        this.plugin = FastMud.getInstance();
         // Get plugin manager.
         this.pluginManager = plugin.getServer().getPluginManager();
         // Loading plugin config.

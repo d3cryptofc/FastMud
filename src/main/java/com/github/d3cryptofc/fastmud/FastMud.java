@@ -8,8 +8,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class FastMud extends JavaPlugin {
 
-    private Logger logger;
+    // Single FastMud instance.
+    private static FastMud instance;
+
     private PluginFeatureManager pluginFeatureManager;
+    private Logger logger;
+
+    public static FastMud getInstance() {
+        // Get the single instance.
+        return FastMud.instance;
+    }
 
     public void showBanner() {
         String[] lines = {
@@ -30,6 +38,9 @@ public class FastMud extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Set the single instance.
+        FastMud.instance = this;
+
         this.logger = this.getLogger();
         this.saveDefaultConfig();
 
@@ -37,7 +48,7 @@ public class FastMud extends JavaPlugin {
         this.showBanner();
 
         // Enabling features.
-        this.pluginFeatureManager = new PluginFeatureManager(this);
+        this.pluginFeatureManager = new PluginFeatureManager();
         this.pluginFeatureManager.loadAll();
     }
 

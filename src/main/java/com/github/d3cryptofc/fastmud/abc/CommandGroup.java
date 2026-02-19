@@ -11,8 +11,8 @@ public abstract class CommandGroup implements TabExecutor {
     protected Logger logger;
     protected HashMap<String, CommandGroup> subcommands;
 
-    public CommandGroup(FastMud plugin) {
-        this.plugin = plugin;
+    public CommandGroup() {
+        this.plugin = FastMud.getInstance();
         this.logger = plugin.getLogger();
         this.subcommands = new HashMap<>();
     }
