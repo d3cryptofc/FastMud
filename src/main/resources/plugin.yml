@@ -11,3 +11,6 @@ permissions:
     description: "Allows you to see and use: /fastmud"
     default: op
 
+  fastmud.command.reload:
+    description: "Allows you to use: /fastmud reload"
+    default: op
