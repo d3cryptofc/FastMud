@@ -40,6 +40,7 @@ We do not intend to release corrections for previous versions of the plugin. So,
 - `fastmud.command.reload`: Allows you to use: **/fastmud reload**
 
 ### Events
+- `fastmud.event.*`: Allows every available event permission to player
 - `fastmud.event.place_dirt_over_water`: Allows player to place dirt over water to turn dirt into mud
 
 ## ⚙️ Configuration ([`config.yml`](/src/main/resources/config.yml))

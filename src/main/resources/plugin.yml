@@ -27,6 +27,13 @@ permissions:
     description: Allows player to place dirt over water to turn dirt into mud
     default: true
 
+  fastmud.event.*:
+    description: Allows every available event permission to player
+    default: true
+    
+    children:
+      fastmud.event.place_dirt_over_water: true    
+
 commands:
   fastmud:
       description: Manage fastmud plugin
