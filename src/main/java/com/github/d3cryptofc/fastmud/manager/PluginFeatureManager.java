@@ -25,12 +25,17 @@ public class PluginFeatureManager {
         this.plugin = plugin;
         // Get plugin manager.
         this.pluginManager = plugin.getServer().getPluginManager();
+        // Loading plugin config.
+        this.reloadConfig();
+        // Get plugin logger.
+        this.logger = plugin.getLogger();
+    }
+
+    public void reloadConfig() {
         // Get plugin configuration.
         FileConfiguration configuration = plugin.getConfig();
         // Get "when" configuration section.
         this.whenConfigSection = configuration.getConfigurationSection("when");
-        // Get plugin logger.
-        this.logger = plugin.getLogger();
     }
 
     public void load(
