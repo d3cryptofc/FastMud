@@ -15,11 +15,19 @@ public class PlaceDirtOverWater implements Listener {
         /*
          * When dirt is placed over water.
          */
-        // Getting block placed.
+        // Obtaining block placed.
         Block placedBlock = event.getBlock();
 
         // Exit if block is different of dirt.
         if (placedBlock.getType() != Material.DIRT) return;
+
+        // Get player has permission.
+        boolean playerHasPermission = event
+            .getPlayer()
+            .hasPermission("fastmud.event.place_dirt_over_water");
+
+        // Player has not permission? Finish the function.
+        if (!playerHasPermission) return;
 
         // Check contains any WATER around the placed block.
         if (

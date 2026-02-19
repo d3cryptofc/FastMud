@@ -34,9 +34,13 @@ We do not intend to release corrections for previous versions of the plugin. So,
 
 ## 📜 Permissions
 
+### Command
 - `fastmud.command.*`: Allows you use any fastmud command
 - `fastmud.command.fastmud`: Allows you to see and use: **/fastmud**
 - `fastmud.command.reload`: Allows you to use: **/fastmud reload**
+
+### Events
+- `fastmud.event.place_dirt_over_water`: Allows player to place dirt over water to turn dirt into mud
 
 ## ⚙️ Configuration ([`config.yml`](/src/main/resources/config.yml))
 

@@ -23,6 +23,10 @@ permissions:
       fastmud.command: true
       fastmud.command.reload: true
 
+  fastmud.event.place_dirt_over_water:
+    description: Allows player to place dirt over water to turn dirt into mud
+    default: true
+
 commands:
   fastmud:
       description: Manage fastmud plugin
