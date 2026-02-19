@@ -4,6 +4,7 @@ import com.github.d3cryptofc.fastmud.command.FastMudCommand;
 import com.github.d3cryptofc.fastmud.constant.AnsiColors;
 import com.github.d3cryptofc.fastmud.manager.PluginFeatureManager;
 import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,8 +12,6 @@ public class FastMud extends JavaPlugin {
 
     // Single FastMud instance.
     private static FastMud instance;
-
-    private Logger logger;
 
     public static FastMud getInstance() {
         // Get the single instance.
@@ -28,11 +27,11 @@ public class FastMud extends JavaPlugin {
         };
 
         String starting_color;
+        Logger logger = Bukkit.getLogger();
 
         for (int idx = 0; idx < lines.length; idx++) {
             starting_color = idx != 0 ? AnsiColors.DARK_GRAY : AnsiColors.BLUE;
-
-            this.logger.info(starting_color + lines[idx]);
+            logger.info(starting_color + lines[idx]);
         }
     }
 
@@ -41,7 +40,7 @@ public class FastMud extends JavaPlugin {
         // Set the single instance.
         FastMud.instance = this;
 
-        this.logger = this.getLogger();
+        // Save default embeded plugin configuration.
         this.saveDefaultConfig();
 
         // Showing plugin banner.
