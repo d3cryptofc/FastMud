@@ -5,3 +5,9 @@ main: "${projectGroup}.${projectName}"
 version: "${projectVersion}"
 author: "${projectAuthor}"
 api-version: "${gameVersion}"
+
+permissions:
+  fastmud.command:
+    description: "Allows you to see and use: /fastmud"
+    default: op
+
