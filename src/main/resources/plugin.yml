@@ -14,3 +14,11 @@ permissions:
   fastmud.command.reload:
     description: "Allows you to use: /fastmud reload"
     default: op
+
+  fastmud.command.*:
+    description: Allows you use any fastmud command
+    default: op
+
+    children:
+      fastmud.command: true
+      fastmud.command.reload: true
