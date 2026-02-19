@@ -32,6 +32,12 @@ We do not intend to release corrections for previous versions of the plugin. So,
 - When dispenser dispenses water.
 - When block fade to water (ex: ice block).
 
+## 📜 Permissions
+
+- `fastmud.command.*`: Allows you use any fastmud command
+- `fastmud.command.fastmud`: Allows you to see and use: **/fastmud**
+- `fastmud.command.reload`: Allows you to use: **/fastmud reload**
+
 ## ⚙️ Configuration ([`config.yml`](/src/main/resources/config.yml))
 
 ```yaml
