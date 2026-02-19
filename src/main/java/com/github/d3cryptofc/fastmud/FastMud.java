@@ -3,11 +3,13 @@ package com.github.d3cryptofc.fastmud;
 import com.github.d3cryptofc.fastmud.constant.AnsiColors;
 import com.github.d3cryptofc.fastmud.manager.PluginFeatureManager;
 import java.util.logging.Logger;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class FastMud extends JavaPlugin {
 
     private Logger logger;
+    private PluginFeatureManager pluginFeatureManager;
 
     public void showBanner() {
         String[] lines = {
@@ -35,6 +37,18 @@ public class FastMud extends JavaPlugin {
         this.showBanner();
 
         // Enabling features.
-        (new PluginFeatureManager(this)).loadAll();
+        this.pluginFeatureManager = new PluginFeatureManager(this);
+        this.pluginFeatureManager.loadAll();
+    }
+
+    public void reload() {
+        // Unregister all event listeners from this plugin.
+        HandlerList.unregisterAll(this);
+        // Reload YAML plugin configuration.
+        this.reloadConfig();
+        // Reload new reloaded configuration
+        this.pluginFeatureManager.reloadConfig();
+        // Load all features again.
+        this.pluginFeatureManager.loadAll();
     }
 }
