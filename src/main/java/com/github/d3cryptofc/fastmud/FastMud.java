@@ -1,5 +1,6 @@
 package com.github.d3cryptofc.fastmud;
 
+import com.github.d3cryptofc.fastmud.command.FastMudCommand;
 import com.github.d3cryptofc.fastmud.constant.AnsiColors;
 import com.github.d3cryptofc.fastmud.manager.PluginFeatureManager;
 import java.util.logging.Logger;
@@ -50,6 +51,9 @@ public class FastMud extends JavaPlugin {
         // Enabling features.
         this.pluginFeatureManager = new PluginFeatureManager();
         this.pluginFeatureManager.loadAll();
+
+        // Register "fastmud" command.
+        this.getCommand("fastmud").setExecutor(new FastMudCommand());
     }
 
     public void reload() {

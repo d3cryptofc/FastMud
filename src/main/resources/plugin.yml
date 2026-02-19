@@ -22,3 +22,8 @@ permissions:
     children:
       fastmud.command: true
       fastmud.command.reload: true
+
+commands:
+  fastmud:
+      description: Manage fastmud plugin
+      permission: fastmud.command
