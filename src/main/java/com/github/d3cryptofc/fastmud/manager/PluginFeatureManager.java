@@ -15,12 +15,15 @@ import org.bukkit.plugin.PluginManager;
 
 public class PluginFeatureManager {
 
+    // Single PluginFeatureManager instance.
+    private static PluginFeatureManager instance;
+
     private FastMud plugin;
     private PluginManager pluginManager;
     private ConfigurationSection whenConfigSection;
     private Logger logger;
 
-    public PluginFeatureManager() {
+    private PluginFeatureManager() {
         // Get the plugin.
         this.plugin = FastMud.getInstance();
         // Get plugin manager.
@@ -29,6 +32,16 @@ public class PluginFeatureManager {
         this.reloadConfig();
         // Get plugin logger.
         this.logger = plugin.getLogger();
+    }
+
+    public static PluginFeatureManager getInstance() {
+        // Missing to create a instance?
+        if (PluginFeatureManager.instance == null) {
+            // Create the single instance.
+            PluginFeatureManager.instance = new PluginFeatureManager();
+        }
+        // Return single instance.
+        return PluginFeatureManager.instance;
     }
 
     public void reloadConfig() {

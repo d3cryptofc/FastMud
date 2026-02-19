@@ -12,7 +12,6 @@ public class FastMud extends JavaPlugin {
     // Single FastMud instance.
     private static FastMud instance;
 
-    private PluginFeatureManager pluginFeatureManager;
     private Logger logger;
 
     public static FastMud getInstance() {
@@ -49,8 +48,7 @@ public class FastMud extends JavaPlugin {
         this.showBanner();
 
         // Enabling features.
-        this.pluginFeatureManager = new PluginFeatureManager();
-        this.pluginFeatureManager.loadAll();
+        PluginFeatureManager.getInstance().loadAll();
 
         // Register "fastmud" command.
         this.getCommand("fastmud").setExecutor(new FastMudCommand());
@@ -61,9 +59,12 @@ public class FastMud extends JavaPlugin {
         HandlerList.unregisterAll(this);
         // Reload YAML plugin configuration.
         this.reloadConfig();
+        // Obtaining feature manager.
+        PluginFeatureManager pluginFeatureManager =
+            PluginFeatureManager.getInstance();
         // Reload new reloaded configuration
-        this.pluginFeatureManager.reloadConfig();
+        pluginFeatureManager.reloadConfig();
         // Load all features again.
-        this.pluginFeatureManager.loadAll();
+        pluginFeatureManager.loadAll();
     }
 }
