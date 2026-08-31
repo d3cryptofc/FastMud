@@ -40,7 +40,7 @@ public class FastMud extends JavaPlugin {
         // Set the single instance.
         FastMud.instance = this;
 
-        // Save default embeded plugin configuration.
+        // Save default embedded plugin configuration.
         this.saveDefaultConfig();
 
         // Showing plugin banner.

@@ -15,7 +15,7 @@ public class BlockFadeToWaterOverDirt implements Listener {
         /*
          * When block fade to water over dirt (ex: ice block).
          */
-        // Getting fadded block.
+        // Getting faded block.
         Block fadedBlock = event.getBlock();
 
         // Exit if new block state is different of water.

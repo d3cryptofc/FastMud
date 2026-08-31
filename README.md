@@ -48,7 +48,7 @@ We do not intend to release corrections for previous versions of the plugin. So,
 ```yaml
 # Feature settings.
 when:
-  # When player use water buycket over dirt.
+  # When player use water bucket over dirt.
   water_bucket_over_dirt:
     enabled: true
 
@@ -64,7 +64,7 @@ when:
   block_fade_to_water_over_dirt:
     enabled: true
 
-  # When disspenser dispenses water over dirt.
+  # When dispenser dispenses water over dirt.
   dispense_water_over_dirt:
     enabled: true
 ```

@@ -33,6 +33,6 @@ when:
   block_fade_to_water_over_dirt:
     enabled: true
 
-  # When disspenser dispenses water over dirt.
+  # When dispenser dispenses water over dirt.
   dispense_water_over_dirt:
     enabled: true

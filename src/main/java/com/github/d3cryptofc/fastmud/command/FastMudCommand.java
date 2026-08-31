@@ -66,7 +66,7 @@ public class FastMudCommand extends CommandGroup {
         // Any command argument length? Try to get subcommand.
         CommandGroup subcommand = getSubcommand(args[0]);
 
-        // Subcommand doesn't exists? Break command.
+        // Subcommand doesn't exist? Break command.
         if (subcommand == null) return true;
 
         // Subcommand exists, make propagation.
