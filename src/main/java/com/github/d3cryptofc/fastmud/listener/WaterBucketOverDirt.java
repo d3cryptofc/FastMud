@@ -18,6 +18,14 @@ public class WaterBucketOverDirt implements Listener {
         // Exit if not using water bucket.
         if (event.getBucket() != Material.WATER_BUCKET) return;
 
+        // Get player has permission.
+        boolean playerHasPermission = event
+            .getPlayer()
+            .hasPermission("fastmud.event.water_bucket_over_dirt");
+
+        // Player has not permission? Finish the function.
+        if (!playerHasPermission) return;
+
         // Get block occupied by water.
         Block blockOccupiedByWater = event.getBlock();
 

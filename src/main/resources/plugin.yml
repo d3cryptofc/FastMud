@@ -1,18 +1,18 @@
-name: "${projectName}"
+name: '${projectName}'
 description: Lightweight and efficient plugin to turn dirt into mud without using glass bottle. Save your time!
-website: "${projectRepositoryUrl}"
-main: "${projectGroup}.${projectName}"
-version: "${projectVersion}"
-author: "${projectAuthor}"
-api-version: "${gameVersion}"
+website: '${projectRepositoryUrl}'
+main: '${projectGroup}.${projectName}'
+version: '${projectVersion}'
+author: '${projectAuthor}'
+api-version: '${gameVersion}'
 
 permissions:
   fastmud.command:
-    description: "Allows you to see and use: /fastmud"
+    description: 'Allows you to see and use: /fastmud'
     default: op
 
   fastmud.command.reload:
-    description: "Allows you to use: /fastmud reload"
+    description: 'Allows you to use: /fastmud reload'
     default: op
 
   fastmud.command.*:
@@ -27,14 +27,19 @@ permissions:
     description: Allows player to place dirt over water to turn dirt into mud
     default: true
 
+  fastmud.event.water_bucket_over_dirt:
+    description: Allows player to use water bucket over dirt to turn dirt into mud
+    default: true
+
   fastmud.event.*:
     description: Allows every available event permission to player
     default: true
-    
+
     children:
-      fastmud.event.place_dirt_over_water: true    
+      fastmud.event.place_dirt_over_water: true
+      fastmud.event.water_bucket_over_dirt: true
 
 commands:
   fastmud:
-      description: Manage fastmud plugin
-      permission: fastmud.command
+    description: Manage fastmud plugin
+    permission: fastmud.command

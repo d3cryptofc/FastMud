@@ -42,6 +42,7 @@ We do not intend to release corrections for previous versions of the plugin. So,
 ### Events
 - `fastmud.event.*`: Allows every available event permission to player
 - `fastmud.event.place_dirt_over_water`: Allows player to place dirt over water to turn dirt into mud
+- `fastmud.event.water_bucket_over_dirt`: Allows player to use water bucket over dirt to turn dirt into mud
 
 ## ⚙️ Configuration ([`config.yml`](/src/main/resources/config.yml))
 
